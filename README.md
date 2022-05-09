@@ -1,6 +1,18 @@
 # Visual-Attention-Network
 Implementation of Visual Attention Network (Van)  in Tensorflow 2
 
+> A large kernel convolution can be divided into three components: a spatial local convolution (depth-wise convolution), a spatial long-range convolution (depth-wise dilation convolution), and a channel convolution (`1×1` convolution). Specifically, a `K×K` convolution is decomposed into a `⌈ K/d ⌉×⌈ K/d ⌉` depth-wise dilation convolution with dilation `d`, a `(2d − 1) × (2d − 1)` depth-wise convolution and a `1×1` convolution. Through the above decomposition, the module can capture long-range relation- ship with slight computational cost and parameters.
+
+
+| Properties                | Convolution   | Self-Attention  | LKA   |
+| :---:                     | :-:           | :-:             |:-:    |
+| Local Receptive Field     | ◯             | ✖️              |◯      |
+| Long-range Dependence     | ✖️            | ◯               |◯      |
+| Spatial Adaptability      | ✖️            | ◯               |◯      |
+| Channel Adaptability      | ✖️            | ✖️              |◯      |
+
+
+
 ## Usage
 These codes are well-aligned with pytorch implementation.
 [Pytorch code](https://github.com/Visual-Attention-Network/VAN-Classification/blob/ccdfc6883d0da136010bb8cea52bec3587ffb250/models/van.py)
